@@ -42,3 +42,8 @@ node_modules/
 # Docker related
 *.pid
 *.log
+
+# Celery Beat schedule file
+celerybeat-schedule
+celerybeat-schedule.db
+celerybeat.pid
