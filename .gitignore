@@ -47,3 +47,6 @@ node_modules/
 celerybeat-schedule
 celerybeat-schedule.db
 celerybeat.pid
+
+# PyCharm/IntelliJ project settings
+.idea/
