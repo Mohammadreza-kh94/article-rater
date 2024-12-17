@@ -1,0 +1,44 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+env/
+venv/
+*.egg-info/
+.eggs/
+
+# Django and Python logs
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Secret or environment files
+.env
+*.env
+
+# Cache and temporary files
+*.cache
+*.mo
+*.swp
+.DS_Store
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# Database files (if any local db used)
+*.sqlite3
+
+# Static and media files (if collected locally)
+staticfiles/
+media/
+
+# Node modules (if you have a frontend build)
+node_modules/
+
+# Docker related
+*.pid
+*.log
