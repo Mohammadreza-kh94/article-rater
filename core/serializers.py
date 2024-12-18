@@ -60,7 +60,7 @@ class RatingSerializer(serializers.ModelSerializer):
         article = validated_data['article']
         score = validated_data['score']
 
-        rating, created = Rating.objects.update_or_create(user=user, article=article, score=score)
+        rating, created = Rating.objects.update_or_create(user=user, article=article, defaults={'score': score})
 
         old_score = rating.score if not created else None
         update_rating_cache(article.id, old_score, score)
@@ -80,6 +80,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         if attrs["password"] != attrs["password2"]:
             raise serializers.ValidationError({"password": "Password fields didn’t match."})
         return attrs
+
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A user with this email already exists.")
+        return value
 
     def create(self, validated_data):
         validated_data.pop("password2")
